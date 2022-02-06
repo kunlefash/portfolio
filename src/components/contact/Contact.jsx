@@ -2,13 +2,16 @@ import "./contact.css"
 import Phone from "../../img/phone.png"
 import Email from "../../img/email.png"
 import Address from "../../img/address.png"
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import emailjs from 'emailjs-com'
+import { ThemeContext } from "../../context"
 
 
 const Contact = () => {
     const formRef = useRef()
     const [done, setDone] = useState(false)
+    const theme = useContext(ThemeContext)
+    const darkMode = theme.state.darkMode;
 
     const handleSubmit = (e)=> {
         e.preventDefault();
@@ -47,10 +50,10 @@ const Contact = () => {
                   <b>This is my portfolio!!</b> I am a very diligent and hardworking person. I am a fullstack web developer familiar with React for frontend and NodeJs for Backend. I am ready to put in my 100% for any job you have got for me
               </p>
               <form ref={formRef} onSubmit={handleSubmit}>
-                  <input type="text" placeholder="Name" name="user_name" />
-                  <input type="text" placeholder="Subject" name="user_subject" />
-                  <input type="text" placeholder="Email" name="user_email" />
-                  <textarea rows="5" placeHolder="Message" name="message"/>
+                  <input style={{backgroundColor: darkMode && "#333"}} type="text" placeholder="Name" name="user_name" />
+                  <input style={{backgroundColor: darkMode && "#333"}} type="text" placeholder="Subject" name="user_subject" />
+                  <input style={{backgroundColor: darkMode && "#333"}} type="text" placeholder="Email" name="user_email" />
+                  <textarea style={{backgroundColor: darkMode && "#333"}} rows="5" placeHolder="Message" name="message"/>
                 <button>Submit</button>
                 {done && "  Thank you for using our service "}
               </form>

@@ -8,12 +8,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: bisque;
 }
 .i-right{
     flex: 1;
     position: relative;
-    background-color: bisque;
 }
 
 .i-left-wrapper{
@@ -77,4 +75,22 @@
     position: absolute;
     top: 0;
     right: 0;
+}
+
+@media screen and (max-width: 480px){
+    .i{
+        flex-direction: column;
+    }
+
+    .i-left-wrapper{
+        padding: 10px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100%;
+
+    }
+    .i-desc{
+        display: none;
+    }
 }
