@@ -17,7 +17,6 @@ const App = () => {
         <About/>
         <ProductList/>
         <Contact/>
-  
       </div>;
   };
   
